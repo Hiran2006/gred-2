@@ -1,9 +1,17 @@
 import Link from "next/link"
 
-export default function Button({ name, link }: { name: String; link: String }) {
+export default function Button({
+  name,
+  link,
+  styles,
+}: {
+  name: string
+  link: string
+  styles: string
+}) {
   return (
-    <div className='w-40 leading-10 font-bold bg-white rounded text-black text-center'>
-      <Link href={link as unknown as URL}>{name}</Link>
+    <div className={styles}>
+      <Link href={link}>{name}</Link>
     </div>
   )
 }

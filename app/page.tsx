@@ -40,8 +40,16 @@ export default function Home() {
             your own way.
           </p>
           <div className='flex mt-15 gap-20 text-2xl'>
-            <Buttons name='Log In' link='/login'></Buttons>
-            <Buttons name='Log Up' link='/logup'></Buttons>
+            <Buttons
+              name='Log In'
+              link='/login'
+              styles='w-40 leading-10 font-bold bg-white rounded text-black text-center'
+            ></Buttons>
+            <Buttons
+              name='Log Up'
+              link='/logup'
+              styles='w-40 leading-10 font-bold bg-white rounded text-black text-center'
+            ></Buttons>
           </div>
         </div>
       </div>
