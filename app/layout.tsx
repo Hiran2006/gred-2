@@ -1,5 +1,9 @@
 "use client"
 import "./global.css"
+import { Geist } from "next/font/google"
+
+const geist = Geist({ subsets: ["latin"] })
+
 export default function RootLayout({
   children,
 }: {
@@ -8,7 +12,9 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body>{children}</body>
+      <body className={geist.className + " bg-black text-white"}>
+        {children}
+      </body>
     </html>
   )
 }
