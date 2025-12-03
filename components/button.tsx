@@ -10,8 +10,8 @@ export default function Button({
   styles: string
 }) {
   return (
-    <div className={styles}>
-      <Link href={link}>{name}</Link>
-    </div>
+    <Link href={link}>
+      <div className={styles}>{name}</div>
+    </Link>
   )
 }
