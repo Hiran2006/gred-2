@@ -12,7 +12,9 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body className={geist.className + " bg-black text-white"}>
+      <body
+        className={geist.className + " bg-black text-white overflow-x-hidden"}
+      >
         {children}
       </body>
     </html>

@@ -24,7 +24,6 @@ export default function SignIn() {
 
     if (error) {
       console.error("Login error:", error.message)
-      alert(error.message) // or UI message
       return
     }
     route.push("/home")
