@@ -1,9 +1,11 @@
 import Image from "next/image"
 import logo from "@/public/pattern_logo.png"
 import Posts from "./components/Posts"
+import { GrAdd } from "react-icons/gr"
+import Link from "next/link"
 export default function Home() {
   return (
-    <div className='flex justify-center flex-col items-center '>
+    <div className='flex justify-center flex-col items-center relative'>
       <Image src={logo} alt='' className='w-1/5 mt-10' />
       <div className='mt-10 rounded-3xl flex items-center justify-center bg-[#111] w-1/3 h-10 border border-emerald-500'>
         <input
@@ -28,6 +30,18 @@ export default function Home() {
         </svg>
       </div>
       <Posts />
+      <div className='sticky bottom-0 left-0 w-screen h-15 bg-black flex justify-evenly items-center border-t-2 border-emerald-300'>
+        <div></div>
+        <div className='relative'>
+          <Link
+            href='/post/add'
+            className='absolute bottom-0 -translate-x-1/2 bg-black border rounded-full border-emerald-300 p-8'
+          >
+            <GrAdd />
+          </Link>
+        </div>
+        <div></div>
+      </div>
     </div>
   )
 }
