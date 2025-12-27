@@ -28,7 +28,7 @@ export default function SellPosts() {
       ) : (
         <div className='flex justify-evenly flex-wrap w-full gap-6'>
           {sellData.map(post => (
-            <Card data={post} key={post.id} />
+            <Card data={post} key={post.id} navTo={"/sell_post/view/"} />
           ))}
         </div>
       )}

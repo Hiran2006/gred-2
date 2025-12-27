@@ -7,17 +7,17 @@ import supabase from "@/util/supabase/client"
 import { PulseLoader } from "react-spinners"
 import Link from "next/link"
 
-type Sell = Database["public"]["Tables"]["sell_post"]["Row"]
+type Rent = Database["public"]["Tables"]["rent_post"]["Row"]
 
 export default function ViewPost() {
   const params = useParams<{ id: string }>()
-  const [details, setDetails] = useState<Sell | null>(null)
-  const [seller, setSeller] = useState<string | null>(null)
+  const [details, setDetails] = useState<Rent | null>(null)
+  const [owner, setOwner] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchDetails = async () => {
       const { data, error } = await supabase
-        .from("sell_post")
+        .from("rent_post")
         .select("*")
         .eq("id", params.id)
 
@@ -93,8 +93,8 @@ export default function ViewPost() {
             </p>
             <p className='flex'>
               <span className='text-emerald-400 font-semibold'>Seller:</span>{" "}
-              {seller ? (
-                <span>{seller}</span>
+              {owner ? (
+                <span>{owner}</span>
               ) : (
                 <PulseLoader color='#50C878' className='pl-6' />
               )}
@@ -104,8 +104,13 @@ export default function ViewPost() {
               {details?.category}
             </p>
             <p>
-              <span className='text-emerald-400 font-semibold'>Price:</span>{" "}
-              {details?.amount} ₹
+              <span className='text-emerald-400 font-semibold'>deposite:</span>{" "}
+              {details?.deposite} ₹
+            </p>
+
+            <p>
+              <span className='text-emerald-400 font-semibold'>rent:</span>{" "}
+              {details?.rent_amount} ₹
             </p>
           </div>
 
